@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django</title>
-</head>
-<body>
+{% extends "app/base.html" %}
 
-    <h1>post list</h1>
-    {% for post in post_list %}
-      <div>
+
+{% block content%}
+  <h1>post list</h1>
+  {% for post in post_list %}
+    <div>
+      {# todo : url reverse 기능을 쓰도록 수정이 되어야 함. #}
+      <a href="/app/{{ post.id }}/">
         {{post.id}} . {{post.title}}
-      </div>
-    {% endfor %}
-
-
-</body>
-</html>
+      </a>
+    </div>
+  {% endfor %}
+{% endblock %}

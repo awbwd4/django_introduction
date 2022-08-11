@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "==4.0.0"
 black = "*"
+django-bootstrap5 = "*"
 
 [dev-packages]
 autopep8 = "*"

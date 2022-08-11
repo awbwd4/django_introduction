@@ -21,6 +21,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("app/", app_views.index),
     path("app/<int:pk>/", app_views.post_detail),
-
+    path("app/new/", app_views.post_new),
 
 ]

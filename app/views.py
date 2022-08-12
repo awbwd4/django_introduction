@@ -1,12 +1,16 @@
 from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import CreateView
+from django.contrib.auth.decorators import login_required
 from app.models import Post
 from app.forms import PostForm
 
 
+@login_required
 def index(request: HttpRequest) -> HttpResponse:
+
+    # if not request.user.is_authenticated:
+    #     return redirect("/accounts/login/")
 
     qs = Post.objects.all()
 

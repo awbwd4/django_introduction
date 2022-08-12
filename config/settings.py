@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # local apps
     "app",
     "catube",
+    "accounts",
 ]
 
 MIDDLEWARE = [
